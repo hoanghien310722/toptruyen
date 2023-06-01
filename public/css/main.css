@@ -4,7 +4,7 @@ grid-template-columns: repeat(8, 1fr);
 grid-template-rows: repeat(2, 1fr);
 grid-column-gap: 2px;
 grid-row-gap: 10px;
-margin: 0 100px;
+margin: 0 5%;
 }
 .parent .story_hot:hover{
   transform: scale(1.05);
@@ -72,7 +72,7 @@ margin: 0 100px;
 		grid-row-gap: 10px;
 		width: 100%;
 		margin: 0;
-    padding: 0px 100px;
+    padding: 0px 0px;
 	}
 	.parent .story_hot{
 		max-width: 98px;
@@ -83,6 +83,9 @@ margin: 0 100px;
   }
   #category__story{
     display: none;
+  }
+  .full-label{
+    top:-50px;
   }
 }
 

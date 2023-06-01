@@ -231,7 +231,9 @@
 
         public function storySearch(){
             try{
-                $search_query = $_POST['search'];
+                if(isset($_POST['search'])){
+                    $search_query = $_POST['search'];
+                }    
                 $query = "SELECT * FROM story WHERE name_story LIKE :search_query";
                 $cmd = $this->Story->prepare($query);
                 $cmd->bindValue(':search_query', '%' . $search_query . '%');

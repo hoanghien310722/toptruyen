@@ -36,6 +36,11 @@
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
       id="theme-styles"
     />
+	<style>
+		html {
+			scroll-behavior: smooth;
+		}
+	</style>
 </head>
 <body>
 	<div class="wrapper sidebar_minimize">
@@ -63,7 +68,7 @@
 				</a>		
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3" method="POST" action="<?php echo APP_URL.'home/search';?>">
+						<form class="navbar-left navbar-form nav-search mr-md-3" method="POST" action="<?php echo APP_URL.'/home/search';?>">
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<button type="submit" class="btn btn-search pr-1">
@@ -143,7 +148,7 @@
 										<li>
 											<a href="
 											<?php 
-												echo APP_URL.'category/category/'.$val_3['name_unsigned'];
+												echo APP_URL.'/category/category/'.$val_3['name_unsigned'];
 											?>
 											">
 												<span class="sub-item"><?php echo $val_3['name_category'] ?></span>
@@ -161,29 +166,29 @@
 						</li>
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#tables">
-								<i class="fas fa-table"></i>
+								<i class="fas fa-th-list"></i>
 								<p>Phân loại theo chương</p>
 								<span class="caret"></span>
 							</a>
 							<div class="collapse" id="tables">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="<?php echo APP_URL.'category/storyMax100';?>" >
+										<a href="<?php echo APP_URL.'/category/storyMax100';?>" >
 											<span class="sub-item">Dưới 100 chương</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?php echo APP_URL.'category/from_100_to_500';?>">
+										<a href="<?php echo APP_URL.'/category/from_100_to_500';?>">
 											<span class="sub-item">100 - 500 chương</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?php echo APP_URL.'category/from_500_to_1000';?>">
+										<a href="<?php echo APP_URL.'/category/from_500_to_1000';?>">
 											<span class="sub-item">500 - 1000 chương</span>
 										</a>
 									</li>
 									<li>
-										<a href="<?php echo APP_URL.'category/storyMin1000';?>">
+										<a href="<?php echo APP_URL.'/category/storyMin1000';?>">
 											<span class="sub-item">Trên 1000 chương</span>
 										</a>
 									</li>
@@ -199,6 +204,7 @@
 			<?php 
 				require_once './mvc/views/home/'.$data['page'].'.php';
 			?>
+			<a href="#"><button class="btn btn-primary">Top</button></a>
 			<footer class="footer">
 				<div class="container-fluid">
 					<nav class="pull-left">

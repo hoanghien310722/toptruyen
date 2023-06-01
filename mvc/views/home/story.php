@@ -59,9 +59,9 @@
                         <em class="rate-text"></em>
                         <div class="small" itemprop="aggregateRating" itemscope="" itemtype="https://schema.org/AggregateRating"><em>Đánh giá: <strong><span itemprop="ratingValue"><?php echo $data['story']['evaluate'] ?></span></strong>/<span class="text-muted" itemprop="bestRating">10</span> từ <strong><span itemprop="ratingCount">25</span> lượt</strong></em></div>
                     </div>
-                    <p>
+                    <div id="myDiv">
                         <?php echo $data['story']['introduce'] ?>
-                    </p>
+                    </div>
                 </div>
                 <div id="l-chapters">
                     <p style="border-bottom: 1px solid rgba(0, 0, 0, 0.167);">CÁC CHƯƠNG MỚI NHẤT</p>
@@ -69,7 +69,7 @@
                         <?php foreach($data['chapterNew'] as $val) { ?> 
                             <li style="margin: 10px 0px;">
                                 <a href="<?php 
-                                    echo APP_URL.'home/read_story/'.$data['story']['name_story_unsigned'].'/'.$val['number_chapter'];                                          
+                                    echo APP_URL.'/home/read_story/'.$data['story']['name_story_unsigned'].'/'.$val['number_chapter'];                                          
                                     ?>" title="<?php echo $val['name'] ?>">
                                     <span class="chapter-text"><?php echo $val['name'] ?></span>
                                 </a>
@@ -94,7 +94,7 @@
                             <?php foreach($data['storyAuthor'] as $val) { ?> 
                                 <tr>
                                     <td class="text-left"><i class="far fa-dot-circle" style="font-size:10px; transform: translate(0px, -1px);"></i>
-                                        <a href="<?php echo APP_URL.'home/story/'.$val['name_story_unsigned'] ?>">
+                                        <a href="<?php echo APP_URL.'/home/story/'.$val['name_story_unsigned'] ?>" style="font-size:15px;">
                                             <?php 
                                             $chuoi = $val['name_story'];
                                             $do_dai = strlen($chuoi);
@@ -103,7 +103,7 @@
                                             } else {
                                                 $chuoi_cat = $chuoi;
                                             }
-                                            echo $chuoi_cat;
+                                            echo $chuoi;
                                             ?>
                                         </a>
                                     </td>
@@ -120,8 +120,8 @@
                 <div class="col-xs-12 col-sm-6 col-md-6">
                     <ul class="list-chapter">
                         <li><span class="glyphicon glyphicon-certificate"></span> <a href="<?php 
-                                    echo APP_URL.'home/read_story/'.$data['story']['name_story_unsigned'].'/'.$val['number_chapter'];                                          
-                                    ?>" title="<?php echo $val['name'] ?>"><span class="chapter-text"><?php echo $val['name'] ?></span></a></li> 
+                            echo APP_URL.'/home/read_story/'.$data['story']['name_story_unsigned'].'/'.$val['number_chapter'];                                          
+                            ?>" title="<?php echo $val['name'] ?>"><span class="chapter-text"><?php echo $val['name'] ?></span></a></li> 
                     </ul>
                 </div>
             <?php } ?>
@@ -132,3 +132,42 @@
         <div class="fb-comments" data-href="<?php echo $data['current_url'] ?>" data-width="900" data-numposts="5"></div>
     </div>
 </div>
+
+<style>
+#myDiv {
+   max-height: 200px;
+   overflow: hidden;
+   transition: max-height 0.3s ease-out;
+}
+
+#myDiv.expanded {
+   max-height: none;
+   overflow: visible;
+}
+</style>
+<script>
+const myDiv = document.getElementById('myDiv');
+const contentHeight = myDiv.scrollHeight;
+
+if (contentHeight > 200) {
+   const readMoreBtn = document.createElement('button');
+   readMoreBtn.innerHTML = 'Xem thêm';
+   readMoreBtn.onclick = function() {
+      myDiv.classList.add('expanded');
+      readMoreBtn.style.display = 'none';
+      readLessBtn.style.display = 'block';
+   };
+   myDiv.parentElement.appendChild(readMoreBtn);
+
+   const readLessBtn = document.createElement('button');
+   readLessBtn.innerHTML = 'Thu gọn';
+   readLessBtn.onclick = function() {
+      myDiv.classList.remove('expanded');
+      readMoreBtn.style.display = 'block';
+      readLessBtn.style.display = 'none';
+      myDiv.scrollTop = 0;
+   };
+   readLessBtn.style.display = 'none';
+   myDiv.parentElement.appendChild(readLessBtn);
+}
+</script>

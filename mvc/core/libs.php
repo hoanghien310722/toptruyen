@@ -3,10 +3,10 @@
     require_once "./mvc/models/dbCon.php";
 	define('SALT', '123123$');
 	function public_patch($patch){
-		echo APP_URL.'public/'.$patch;
+		echo APP_URL.'/public/'.$patch;
 	}
         function storage_patch($patch){
-		echo APP_URL.'storage/'.$patch;
+		echo APP_URL.'/storage/'.$patch;
 	}
 
 	function redirect($link, $message=null){
@@ -129,9 +129,9 @@
         
                 foreach($theloai as $val){
                 if($i < count($theloai))
-                        $result .= '<a href="'.APP_URL.'category/category/'.$val['name_unsigned'].'">'.$val["name"].'</a>, ';
+                        $result .= '<a href="'.APP_URL.'/category/category/'.$val['name_unsigned'].'">'.$val["name"].'</a>, ';
                 else
-                        $result .= '<a href="'.APP_URL.'category/category/'.$val['name_unsigned'].'">'.$val["name"].'</a>'; 
+                        $result .= '<a href="'.APP_URL.'/category/category/'.$val['name_unsigned'].'">'.$val["name"].'</a>'; 
                 $i++;
                 }
         

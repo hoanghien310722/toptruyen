@@ -15,7 +15,7 @@
                             <div class="col-5">
                                 <div style="text-align:left; font-weight:bold">
                                     <i class="fas fa-book"></i>  
-                                    <a href="<?php echo APP_URL.'home/story/'.$val['name_story_unsigned'] ?>">
+                                    <a href="<?php echo APP_URL.'/home/story/'.$val['name_story_unsigned'] ?>">
                                         <?php 
                                             echo $val['name_story'];
                                         ?>
@@ -30,7 +30,7 @@
                                         $id_story = $val['id_story'];
                                         $number_chapter =  $val['chapter'];
                                         if(checkChapNext($id_story, $number_chapter) == true){
-                                            echo APP_URL.'home/read_story/'.$val['name_story_unsigned'].'/'.$number_chapter ;
+                                            echo APP_URL.'/home/read_story/'.$val['name_story_unsigned'].'/'.$number_chapter ;
                                         }else{
                                             echo '#';
                                         }                                        
@@ -52,7 +52,7 @@
                                 <div class="col-xl-6" id="category_story">
                                     <a href="
                                         <?php 
-                                            echo APP_URL.'category/category/'.$val_3['name_unsigned'];
+                                            echo APP_URL.'/category/category/'.$val_3['name_unsigned'];
                                         ?>
                                     "><?php echo $val_3['name_category'] ?></a>
                                 </div>

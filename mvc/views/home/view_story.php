@@ -16,7 +16,7 @@
                 <i class="flaticon-right-arrow"></i>
             </li>
             <li class="nav-item">
-                <a href="<?php echo APP_URL.'home/story/'.$data['story']['name_story_unsigned'] ?>"><?php echo $data['story']['name_story'] ?></a>
+                <a href="<?php echo APP_URL.'/home/story/'.$data['story']['name_story_unsigned'] ?>"><?php echo $data['story']['name_story'] ?></a>
             </li>
             <li class="separator">
                 <i class="flaticon-right-arrow"></i>
@@ -26,14 +26,14 @@
             </li>
         </ul>
     </div>
-    <center><a id="name_story" href="<?php echo APP_URL.'home/story/'.$data['story']['name_story_unsigned'] ?>"><h1 id="name__story"><?php echo $data['story']['name_story'] ?></h1></a></center>
+    <center><a id="name_story" href="<?php echo APP_URL.'/home/story/'.$data['story']['name_story_unsigned'] ?>"><h1 id="name__story"><?php echo $data['story']['name_story'] ?></h1></a></center>
     <center><p><?php echo $data['chapter']['name'] ?></p></center>
     <div class="nav-button">
         <a href="<?php
             $id_story = $data['story']['id_story'];
             $number_chapter =  $data['chapter']['number_chapter'] - 1;
             if(checkChapNext($id_story, $number_chapter) == true){
-                echo APP_URL.'home/read_story/'.$data['story']['name_story_unsigned'].'/'.$number_chapter ;
+                echo APP_URL.'/home/read_story/'.$data['story']['name_story_unsigned'].'/'.$number_chapter ;
             }else{
                 echo '#';
             }
@@ -44,7 +44,7 @@
                 <?php foreach($data['allChapter'] as $val) { ?>
                     <option value="
                         <?php 
-                            echo APP_URL.'home/read_story/'.$data['story']['name_story_unsigned'].'/'.$val['number_chapter'];                                          
+                            echo APP_URL.'/home/read_story/'.$data['story']['name_story_unsigned'].'/'.$val['number_chapter'];                                          
                         ?>
                     "><?php echo getNameChapter($val['name']) ?></option>
                     
@@ -55,7 +55,7 @@
             $id_story = $data['story']['id_story'];
             $number_chapter =  $data['chapter']['number_chapter'] + 1;
             if(checkChapNext($id_story, $number_chapter) == true){
-                echo APP_URL.'home/read_story/'.$data['story']['name_story_unsigned'].'/'.$number_chapter ;
+                echo APP_URL.'/home/read_story/'.$data['story']['name_story_unsigned'].'/'.$number_chapter ;
             }else{
                 echo '#';
             }
@@ -71,7 +71,7 @@
             $id_story = $data['story']['id_story'];
             $number_chapter =  $data['chapter']['number_chapter'] - 1;
             if(checkChapNext($id_story, $number_chapter) == true){
-                echo APP_URL.'home/read_story/'.$data['story']['name_story_unsigned'].'/'.$number_chapter ;
+                echo APP_URL.'/home/read_story/'.$data['story']['name_story_unsigned'].'/'.$number_chapter ;
             }else{
                 echo '#';
             }
@@ -82,7 +82,7 @@
                 <?php foreach($data['allChapter'] as $val) { ?>
                     <option value="
                         <?php 
-                            echo APP_URL.'home/read_story/'.$data['story']['name_story_unsigned'].'/'.$val['number_chapter'];                                          
+                            echo APP_URL.'/home/read_story/'.$data['story']['name_story_unsigned'].'/'.$val['number_chapter'];                                          
                         ?>
                     "><?php echo getNameChapter($val['name']) ?></option>
                     
@@ -93,7 +93,7 @@
             $id_story = $data['story']['id_story'];
             $number_chapter =  $data['chapter']['number_chapter'] + 1;
             if(checkChapNext($id_story, $number_chapter) == true){
-                echo APP_URL.'home/read_story/'.$data['story']['name_story_unsigned'].'/'.$number_chapter ;
+                echo APP_URL.'/home/read_story/'.$data['story']['name_story_unsigned'].'/'.$number_chapter ;
             }else{
                 echo '#';
             }
@@ -107,7 +107,7 @@
             <div class="carousel-inner row w-100 mx-auto" role="listbox">
                 <?php $i=1; foreach($data['storyHot'] as $val) { ?> 
                     <div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 <?php if($i ==1) echo"active" ?>">
-                        <a href="<?php echo APP_URL.'home/story/'.$val['name_story_unsigned'] ?>">
+                        <a href="<?php echo APP_URL.'/home/story/'.$val['name_story_unsigned'] ?>">
                             <img src="<?php storage_patch($val['image']) ?>" class="img-fluid mx-auto d-block" alt="img1" style="height: 250px;">
                             <h4 style="margin-top:15px"><center><?php 
                                 $chuoi = $val['name_story'];

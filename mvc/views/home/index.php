@@ -12,7 +12,7 @@
                         <?php foreach($data['category'] as $val_3) { ?>      
                             <option value="
                                 <?php 
-                                    echo APP_URL.'category/category/'.$val_3['name_unsigned'];
+                                    echo APP_URL.'/category/category/'.$val_3['name_unsigned'];
                                 ?>
                             " style="margin:10px 0px;"><?php echo $val_3['name_category'] ?></option>
                         <?php } ?>
@@ -24,7 +24,7 @@
             <div class="col-md-12">
                 <div class="parent">
                     <?php foreach($data['storyHot'] as $val) { ?>
-                        <a href="<?php echo APP_URL.'home/story/'.$val['name_story_unsigned'] ?>">
+                        <a href="<?php echo APP_URL.'/home/story/'.$val['name_story_unsigned'] ?>">
                             <div class="story_hot">
                                 <img src="<?php storage_patch($val['image']) ?>" alt="navbar brand"  >
                                 <div class="title">
@@ -52,7 +52,7 @@
                         <tbody class="table-hover">
                             <?php foreach($data['storyNewUpdate'] as $val_1) { ?>
                                 <tr>
-                                    <td class="text-left"><a href="<?php echo APP_URL.'home/story/'.$val_1['name_story_unsigned'] ?>">
+                                    <td class="text-left"><a href="<?php echo APP_URL.'/home/story/'.$val_1['name_story_unsigned'] ?>">
                                     <i class="far fa-dot-circle" style="font-size:10px; transform: translate(0px, -1px);"></i>
                                         <?php 
                                            echo $val_1['name_story'];
@@ -64,7 +64,7 @@
                                         $id_story = $val_1['id_story'];
                                         $number_chapter =  $val_1['chapter'];
                                         if(checkChapNext($id_story, $number_chapter) == true){
-                                            echo APP_URL.'home/read_story/'.$val_1['name_story_unsigned'].'/'.$number_chapter ;
+                                            echo APP_URL.'/home/read_story/'.$val_1['name_story_unsigned'].'/'.$number_chapter ;
                                         }else{
                                             echo '#';
                                         }                                                                               
@@ -86,7 +86,7 @@
                             <div class="col-xl-6" id="category_story">
                                 <a href="
                                     <?php 
-                                        echo APP_URL.'category/category/'.$val_3['name_unsigned'];
+                                        echo APP_URL.'/category/category/'.$val_3['name_unsigned'];
                                     ?>
                                 "><?php echo $val_3['name_category'] ?></a>
                             </div>
@@ -105,7 +105,7 @@
             <div class="col-md-12">
                 <div class="parent-1">
                     <?php foreach($data['storyFinish'] as $val_2) { ?>
-                        <a href="<?php echo APP_URL.'home/story/'.$val_2['name_story_unsigned'] ?>">
+                        <a href="<?php echo APP_URL.'/home/story/'.$val_2['name_story_unsigned'] ?>">
                             <div class="story_finish">
                                 <img src="<?php storage_patch($val_2['image']) ?>" alt="navbar brand"  >
                                 <div class="caption">
@@ -132,7 +132,7 @@
     </div>
     <a href="
         <?php 
-            echo APP_URL.'category/full_story';
+            echo APP_URL.'/category/full_story';
         ?>
     ">
         <button class="btn btn-default" style="float: right; margin-right: 30px;margin-bottom: 30px;margin-top: 80px;">
